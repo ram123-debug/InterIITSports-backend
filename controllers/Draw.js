@@ -25,20 +25,20 @@ exports.getAllDraws = async (req, res) => {
 exports.getSportsDraw = async (req, res) => {
     try {
         console.log("getSportsDraw", req.params);
-        const {sport} = req.params;
+        const {sports} = req.params;
         if (!sports){
             return res.status(400).json({
                 msg: "Please enter a valid sports name."
             })
         }
 
-        Draws.findOne({ sports: sport }, {
+        Draws.findOne({ sports: sports }, {
             _id: false,
             createdAt: false,
             updatedAt: false,
             __v: false
         })
-        .populate("pools","-_id -createdAt -updatedAt -__v -fixtureId")
+        .populate("pools","-_id -createdAt -updatedAt -__v -fixtureId -drawId")
         .exec((err, draws) => {
             if (err) return res.status(400).send(err);
             return res.status(200).json(draws);
