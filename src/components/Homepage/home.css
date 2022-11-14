@@ -1,0 +1,11 @@
+.bg-svg{
+    background : url("../../assets/svgs/gradient.svg");
+    /* background: url("https://drive.google.com/uc?export=view&id=1ZfZzol1XY89KZYAc2PtyxXzcaJeWUwwI") !important; */
+    width: 100%;
+    height: 538px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    mix-blend-mode: color-burn;
+}

@@ -1,0 +1,22 @@
+.fix-popup-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(57, 57, 57, 0.5);
+    z-index: 5;
+}
+
+.fix-popup-inside{
+    position: absolute;
+    background-color: white;
+    right: 20%;
+    top: 10%;
+    border-radius: 20px;
+    width: 60%;
+    height: 600px;
+    overflow : scroll !important;
+    overflow-y: scroll !important;
+    -webkit-transform: translate3d(0, 0, 0)
+}

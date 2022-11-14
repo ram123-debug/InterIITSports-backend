@@ -1,0 +1,10 @@
+.bg-purple-svg{
+    background : url("../../assets//svgs/purple.svg");
+    width: 100%;
+    height: 538px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    mix-blend-mode: color-burn;
+}
