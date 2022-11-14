@@ -58,10 +58,10 @@ exports.createNewFixture = async (req, res) => {
 exports.addNewLeagueMatch = async (req, res) => {
     try {
         console.log("addNewLeagueMatch", req.body);
-        const {fixtureId, date, dateTitle, pool, teams, score, location, streamUrl, metaData} = req.body;
-        const obj = {date, dateTitle, pool, teams, score, location, streamUrl, metaData}
+        const {fixtureId, date, dateTitle, time, pool, teams, score, location, streamUrl, metaData} = req.body;
+        const obj = {date, dateTitle, time, pool, teams, score, location, streamUrl, metaData}
 
-        if (!fixtureId || !date || !dateTitle || !pool || !teams || !location || !streamUrl) {
+        if (!fixtureId || !date || !dateTitle || !day || !time || !pool || !teams || !location || !streamUrl) {
             return res.status(400).json({
                 msg: "Please enter a valid data to update."
             })
@@ -88,10 +88,10 @@ exports.addNewLeagueMatch = async (req, res) => {
 exports.addNewKnockMatch = async (req, res) => {
     try {
         console.log("addNewKnockMatch", req.body);
-        const {fixtureId, date, dateTitle, day, pool, teams, score, location, streamUrl, metaData} = req.body;
-        const obj = {fixtureId, date, dateTitle, day, pool, teams, score, location, streamUrl, metaData}
+        const {fixtureId, date, dateTitle, time, day, pool, teams, score, location, streamUrl, metaData} = req.body;
+        const obj = {fixtureId, date, dateTitle, time, day, pool, teams, score, location, streamUrl, metaData}
         
-        if (!fixtureId || !date || !dateTitle || !pool || !teams || !location || !streamUrl) {
+        if (!fixtureId || !date || !dateTitle || !day || !time || !teams || !location || !streamUrl) {
             return res.status(400).json({
                 msg: "Please enter a valid data to update."
             })

@@ -12,6 +12,9 @@ const matchSchema = mongoose.Schema({
     day: {
         type: String
     },
+    time: {
+        type: String
+    },
     pool: {
         type: String
     },
