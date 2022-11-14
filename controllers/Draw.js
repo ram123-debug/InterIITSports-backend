@@ -10,7 +10,7 @@ exports.getAllDraws = async (req, res) => {
             updatedAt: false,
             __v: false
         })
-        .populate("pools","-_id -createdAt -updatedAt -__v -fixtureId")
+        .populate("pools","-_id -createdAt -updatedAt -__v -fixtureId -drawId")
         .exec((err, draws) => {
             if (err) return res.status(400).send(err);
             res.status(200).json(draws);
