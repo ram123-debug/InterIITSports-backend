@@ -58,8 +58,8 @@ exports.createNewFixture = async (req, res) => {
 exports.addNewLeagueMatch = async (req, res) => {
     try {
         console.log("addNewLeagueMatch", req.body);
-        const {fixtureId, date, dateTitle, time, pool, teams, score, location, streamUrl, metaData} = req.body;
-        const obj = {date, dateTitle, time, pool, teams, score, location, streamUrl, metaData}
+        const {fixtureId, date, day, dateTitle, time, pool, teams, score, location, streamUrl, metaData} = req.body;
+        const obj = {date, day, dateTitle, time, pool, teams, score, location, streamUrl, metaData}
 
         if (!fixtureId || !date || !dateTitle || !day || !time || !pool || !teams || !location || !streamUrl) {
             return res.status(400).json({
