@@ -29,12 +29,14 @@ const contactRoute = require('./routes/Contact');
 const fixtureRoute = require('./routes/Fixture');
 const userRoute = require('./routes/User');
 const newsRoute = require('./routes/News');
+const resultRoute = require('./routes/Results');
 
 app.use('/api/draws', drawsRoute);
 app.use('/api/contact', contactRoute);
 app.use('/api/fixture', fixtureRoute);
 app.use('/api/users', userRoute);
 app.use('/api/news', newsRoute);
+app.use('/api/result', resultRoute);
 
 app.use('/', (req, res) => {
   res.send('Inter IIT Sports server is Running')

@@ -1,12 +1,11 @@
+const nodemailer = require('nodemailer');
 
 exports.sendMail = async (req, res) => {
     try {
-        console.log("getAllDraws", req.body);
         const {name, email, msg} = req.body;
 
         let transporter = nodemailer.createTransport({
-            service: "Gmail",
-            secure: false,
+            service: "gmail",
             auth: {
                 user: process.env.EMAIL,
                 pass: process.env.PASSWORD,
@@ -19,11 +18,14 @@ exports.sendMail = async (req, res) => {
         const mail = `
             <h2>Received new query from </h2>
             <p>Below are the contact details:</p>    
+            <p>Name: ${name} </p>
+            <p>Email: ${email} </p>
+            <p>Query: ${msg} </p>
         `
 
         let mailOptions = {
-            from: '"Fan Club Portal" <no-reply@fanclubportal.com>',
-            to: registerEmail,
+            from: '"Inter IIT Website" <interiitsportsinternal@gmail.com>',
+            to: "saurabhguptajpr@yahoo.in",
             subject: "[New Query] Inter IIT Sports",
             html: mail
         }
@@ -34,7 +36,7 @@ exports.sendMail = async (req, res) => {
                 return console.log(error);
             }
             console.log('Message sent:', info.messageId);
-            res.status(200).json({ message: "Email has been sent, kindly activate your account" });
+            res.status(200).json({ message: "Email has been sent" });
         })
 
     } catch (error) {
