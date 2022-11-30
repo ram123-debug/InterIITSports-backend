@@ -81,7 +81,7 @@ exports.addNewPool = async (req, res) => {
                 pools: newResultPool._id
             }
         }) 
-        return res.status(201).json(updatedResult);
+        return res.status(201).json(newResultPool);
     } catch (error) {
         res.status(500).json({
             error: error.message
@@ -110,7 +110,7 @@ exports.addNewPoolTeam = async (req, res) => {
                 teamResults: newTeamResult._id
             }
         }) 
-        return res.status(201).json(updatedTeamResult);
+        return res.status(201).json(newTeamResult);
 
     } catch (error) {
         return res.status(500).json({
@@ -119,6 +119,7 @@ exports.addNewPoolTeam = async (req, res) => {
     }
 }
 
+// fix me
 exports.updateTeamResult = async (req, res) => {
     try {
         console.log("updateTeamResult", req.body);
