@@ -1,7 +1,9 @@
 const Fixture = require('../models/Fixture');
 const Match = require('../models/Match');
-
-
+const fs = require('fs');
+const readline = require('readline');
+const {google} = require('googleapis');
+const OAuth2 = google.auth.OAuth2;
 exports.getAllFixtures = async (req, res) => {
     try {
         console.log("getAllFixtures", req.body);
@@ -110,6 +112,32 @@ exports.addNewKnockMatch = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             error: error.message
+        })
+    }
+}
+exports.updateStreamURL = async (req, res) => {
+    try {
+        console.log('updateStreamURL',req.body);
+
+
+    } catch (error)
+    {
+        return res.status(500).json({
+            error:error.message
+        })
+    }
+}
+
+exports.updateScore = async (req, res) => {
+    try {
+        console.log('updateScore', req.body);
+        const {fixtureId, date, dateTitle, time, day, pool, teams, score, location, streamUrl, metaData} = req.body;
+
+
+    } catch (error)
+    {
+        return res.status(500).json({
+            error:error.message
         })
     }
 }
